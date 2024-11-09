@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Enrollment and Grade Processing System</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/prelim.css">
-
-</head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
 <body>
 <br>
-<h3 class="center" >Student Enrollment and Grade Processing System</h3>
+<h3 class="text-center">Student Enrollment and Grade Processing System</h3>
 
 <?php
 // Initialize variables
@@ -51,45 +52,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitGrades'])) {
 
 <!-- Student Enrollment Form -->
 <?php if (!$studentInfoSubmitted): ?>
-    <form method="post">
+    <form method="post" class="form-group">
         <h4>Student Enrollment Form</h4>
-        <label for="firstName">First Name</label><br>
-        <input type="text" id="firstName" name="firstName" required><br>
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control" required>
 
-        <label for="lastName">Last Name</label><br>
-        <input type="text" id="lastName" name="lastName" required><br>
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" name="lastName" class="form-control" required>
 
-        <label for="age">Age</label><br>
-        <input type="number" id="age" name="age" required><br>
+        <label for="age" class="form-label">Age</label>
+        <input type="number" id="age" name="age" class="form-control" required>
 
-        <label>Gender</label><br>
-        <div class="gender-container">
-            <label for="male">Male</label>
-            <input type="radio" id="male" name="gender" value="Male" checked>
-            
-            <label for="female">Female</label>
-            <input type="radio" id="female" name="gender" value="Female">
+        <label class="form-label">Gender</label><br>
+        <div class="form-check form-check-inline">
+            <input type="radio" id="male" name="gender" value="Male" class="form-check-input" checked>
+            <label for="male" class="form-check-label">Male</label>
         </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" id="female" name="gender" value="Female" class="form-check-input">
+            <label for="female" class="form-check-label">Female</label>
+        </div><br>
 
-
-        <label for="course">Course</label>
-        <select id="course" name="course" required>
+        <label for="course" class="form-label">Course</label>
+        <select id="course" name="course" class="form-control" required>
             <option value="BSA">BSA</option>
             <option value="BSIT" selected>BSIT</option>
             <option value="BSTM">BSTM</option>
             <option value="BSCRIM">BSCRIM</option>
-        </select><br>
+        </select>
 
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required><br>
 
-        <button type="submit" name="submitStudentInfo" class="submit-btn" style="background-color: #007bff; color: white;">Submit Student Information</button><br><br>
+        <button type="submit" name="submitStudentInfo" class="btn btn-primary">Submit Student Information</button>
     </form>
 <?php endif; ?>
 
 <!-- Grades Form -->
 <?php if ($studentInfoSubmitted && !$gradesSubmitted): ?>
-    <form method="post">
+    <form method="post" class="form-group">
         <h4>Enter Grades for <?php echo htmlspecialchars($firstName . " " . $lastName); ?></h4>
         
         <!-- Hidden fields to pass student info -->
@@ -100,16 +101,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitGrades'])) {
         <input type="hidden" name="course" value="<?php echo htmlspecialchars($course); ?>">
         <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
         
-        <label for="prelim">Prelim</label><br>
-        <input type="number" id="prelim" name="prelim" required><br>
+        <label for="prelim" class="form-label">Prelim</label>
+        <input type="number" id="prelim" name="prelim" class="form-control" min="0" max="100" required>
 
-        <label for="midterm">Midterm</label><br>
-        <input type="number" id="midterm" name="midterm" required><br>
+        <label for="midterm" class="form-label">Midterm</label>
+        <input type="number" id="midterm" name="midterm" class="form-control" min="0" max="100" required>
 
-        <label for="final">Final</label><br>
-        <input type="number" id="final" name="final" required><br><br>
+        <label for="final" class="form-label">Final</label>
+        <input type="number" id="final" name="final" class="form-control" min="0" max="100" required><br>
 
-        <button type="submit" name="submitGrades" class="submit-btn" style="background-color: #28a745; color: white;">Submit Grades</button>
+        <button type="submit" name="submitGrades" class="btn btn-success">Submit Grades</button>
     </form>
 <?php endif; ?>
 
@@ -136,3 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitGrades'])) {
         </p>
     </div>
 <?php endif; ?>
+
+
+</body>
+</html>
