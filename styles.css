@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.center {
+    text-align: center;
+}
+form, .student-details {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+}
+.student-details h2, form h2 {
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.gender-container {
+    display: flex;
+    gap: 10px; 
+   
+}
+
+input[type="text"], input[type="email"], input[type="number"], select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="radio"] {
+    margin-right: 5px;
+}
+input[type="email"] {
+    margin-bottom: 15px;
+}
+.submit-btn {
+    padding: 5px 20px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.submit-btn:hover {
+    background-color: #0056b3;
+}
