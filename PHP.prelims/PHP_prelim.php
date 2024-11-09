@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    
     </head>
 <body>
 <br>
@@ -138,6 +140,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submitGrades'])) {
     </div>
 <?php endif; ?>
 
+<<<<<<< HEAD
+=======
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+>>>>>>> master
 
 </body>
 </html>
